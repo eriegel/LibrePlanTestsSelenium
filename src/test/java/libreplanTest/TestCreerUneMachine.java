@@ -36,11 +36,11 @@ public class TestCreerUneMachine {
 		driver = new RemoteWebDriver(url_hub,cap);*/
 		
 		if(nav.equals("internet explorer")) {
-			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe");   
+			System.setProperty("webdriver.ie.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe");   
 			driver = new InternetExplorerDriver();  			
 		}
 		if(nav.equals("chrome")) {
-			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
+			System.setProperty("webdriver.chrome.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
 			driver = new ChromeDriver();  			
 		}
 		if(nav.equals("firefox")) {
