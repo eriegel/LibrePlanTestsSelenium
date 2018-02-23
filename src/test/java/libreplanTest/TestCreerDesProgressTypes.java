@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreerDesProgressTypes {
+public class TestCreerDesProgressTypes {
 	//WebDriver driver;
 	RemoteWebDriver driver;
 	@Before
@@ -73,6 +74,10 @@ public class CreerDesProgressTypes {
 		Thread.sleep(2000);
 		assertTrue("Verification failed: Element3 and Element4 are not same.","Progress Type \"Type avancement -Test2\" saved".equals(driver.findElement(By.id(pageCal.prefix()+"47")).getText()));
 		assertTrue(createProgressType.contientLaReference("Type avancement -Test2"));
+	}
+	@After 
+	public void fermer() {
+		driver.close();
 	}
 }
 	

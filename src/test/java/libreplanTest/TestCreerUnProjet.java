@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class testCreerUnProjet {
+public class TestCreerUnProjet {
 
 	//WebDriver driver;
 	RemoteWebDriver driver;
@@ -146,6 +147,10 @@ public class testCreerUnProjet {
 		//Vérifier la présence du projet créée dans la liste des projets ainsi que toutes les informations saisies le concernant
 		Thread.sleep(1000);
 		assertTrue(pageProjetList.verifierPresenceProjetCree("PROJET_TEST1", "PRJTEST001", "", "0 €","0", "PRE-SALES")); */
+	}
+	@After 
+	public void fermer() {
+		driver.close();
 	}
 	
 }

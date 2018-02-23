@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class testAdminConnexion {
+public class TestAdminConnexion {
 
 	//WebDriver driver;
 	RemoteWebDriver driver;
@@ -55,6 +56,10 @@ public class testAdminConnexion {
 		Thread.sleep(2000);
 		WebElement connectedUser = driver.findElement(By.xpath("//div[@class='user-area']/table[1]/tbody/tr[1]/td[2]"));
 		assertEquals("user: admin", connectedUser.getText());
+	}
+	@After 
+	public void fermer() {
+		driver.close();
 	}
 
 }
