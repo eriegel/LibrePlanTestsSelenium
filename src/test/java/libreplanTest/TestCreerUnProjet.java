@@ -34,8 +34,14 @@ public class TestCreerUnProjet {
 		URL url_hub = new URL("http://192.168.2.26:4444/wd/hub");
 
 		driver = new RemoteWebDriver(url_hub,cap);*/
+	
 		
+		if(nav.equals("internet explorer")) {
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe");   
+			driver = new ChromeDriver();  			
+		}
 		if(nav.equals("chrome")) {
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
 			driver = new ChromeDriver();  			
 		}
 		if(nav.equals("firefox")) {

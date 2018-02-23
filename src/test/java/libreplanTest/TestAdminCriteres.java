@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,8 +19,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TestAdminCriteres {
 
-	//WebDriver wd;
-	RemoteWebDriver wd;
+	WebDriver wd;
+	//RemoteWebDriver wd;
 	
 	@Before
 	//COnnexion à l'application
@@ -27,24 +28,28 @@ public class TestAdminCriteres {
 		//wd = new FirefoxDriver();		
 		//RemoteWebDriver wd;
 		String nav =  System.getProperty("browser");
-		//Firefox's geckodriver requires you to specify its location.  
+		/*//Firefox's geckodriver requires you to specify its location.  
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(nav);
 		
 		cap.setPlatform(org.openqa.selenium.Platform.WINDOWS);
 		URL url_hub = new URL("http://192.168.2.26:4444/wd/hub");
 
-		wd = new RemoteWebDriver(url_hub,cap);
-		/*
+		wd = new RemoteWebDriver(url_hub,cap);*/
+		if(nav.equals("internet explorer")) {
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe");   
+			wd = new ChromeDriver();  			
+		}
 		if(nav.equals("chrome")) {
-			browser = new ChromeDriver();  			
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
+			wd = new ChromeDriver();  			
 		}
 		if(nav.equals("firefox")) {
-			FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
-			options.addPreference("browser.tabs.remote.autostart",  false);
-			System.setProperty("webdriver.gecko.driver","C:\\FORMATION\\installeurs\\Selenium\\geckodriver.exe");   
-			browser = new FirefoxDriver(options);  			
-		}		*/	
+			//FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
+			//options.addPreference("browser.tabs.remote.autostart",  false);
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\geckodriver.exe");   
+			wd = new FirefoxDriver();  			
+		}	
 		wd.get("http://localhost:8085/libreplan");
 	}
 	
