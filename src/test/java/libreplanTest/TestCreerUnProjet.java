@@ -18,8 +18,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TestCreerUnProjet {
 
-	//WebDriver driver;
-	RemoteWebDriver driver;
+	WebDriver driver;
+	//RemoteWebDriver driver;
 	
 	@Before
 	public void setupConnexion() throws MalformedURLException {

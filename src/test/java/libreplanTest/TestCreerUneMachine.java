@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,35 +17,32 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TestCreerUneMachine {
 
-	//WebDriver driver;
-	RemoteWebDriver driver;
+	WebDriver driver;
+	//RemoteWebDriver driver;
 	@Before
 	//Connexion à l'application
 	public void setup() throws MalformedURLException {
-		//driver = new FirefoxDriver();
-		//WebDriver browser=null;  
-		
+		//driver = new FirefoxDriver();		
+		//RemoteWebDriver driver;
 		String nav =  System.getProperty("browser");
 		//Firefox's geckodriver requires you to specify its location.  
-		DesiredCapabilities cap = new DesiredCapabilities();
+		/*DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(nav);
 		
 		cap.setPlatform(org.openqa.selenium.Platform.WINDOWS);
 		URL url_hub = new URL("http://192.168.2.26:4444/wd/hub");
 
-		driver = new RemoteWebDriver(url_hub,cap);
-		/*
+		driver = new RemoteWebDriver(url_hub,cap);*/
+		
 		if(nav.equals("chrome")) {
-			browser = new ChromeDriver();  			
+			driver = new ChromeDriver();  			
 		}
 		if(nav.equals("firefox")) {
-			FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
-			options.addPreference("browser.tabs.remote.autostart",  false);
-			System.setProperty("webdriver.gecko.driver","C:\\FORMATION\\installeurs\\Selenium\\geckodriver.exe");   
-			browser = new FirefoxDriver(options);  			
-		}		*/			
-		
-		
+			//FirefoxOptions options = new FirefoxOptions().setProfile(new FirefoxProfile());
+			//options.addPreference("browser.tabs.remote.autostart",  false);
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\geckodriver.exe");   
+			driver = new FirefoxDriver();  			
+		}	
 		
 		driver.get("http://localhost:8085/libreplan");
 	}
