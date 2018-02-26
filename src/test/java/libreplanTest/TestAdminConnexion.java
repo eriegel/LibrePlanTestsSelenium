@@ -47,7 +47,8 @@ public class TestAdminConnexion {
 			cap.setCapability("disable-popup-blocking", true);
 			cap.setCapability("enablePersistentHover", true);
 			cap.setCapability("ignoreZoomSetting", true);
-			driver = new InternetExplorerDriver();  			
+			cap.setCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
+			driver = new InternetExplorerDriver(cap);  			
 		}
 		if(nav.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
