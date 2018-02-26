@@ -39,7 +39,14 @@ public class TestAdminConnexion {
 		driver = new RemoteWebDriver(url_hub,cap);*/
 		
 		if(nav.equals("internet explorer")) {
-			System.setProperty("webdriver.ie.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe");   
+			System.setProperty("webdriver.ie.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe"); 
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setCapability("nativeEvents", false);
+			cap.setCapability("unexpectedAlertBehaviour", "accept");
+			cap.setCapability("ignoreProtectedModeSettings", true);
+			cap.setCapability("disable-popup-blocking", true);
+			cap.setCapability("enablePersistentHover", true);
+			cap.setCapability("ignoreZoomSetting", true);
 			driver = new InternetExplorerDriver();  			
 		}
 		if(nav.equals("chrome")) {
