@@ -39,7 +39,17 @@ public class TestAdminConnexion {
 		driver = new RemoteWebDriver(url_hub,cap);*/
 		
 		if(nav.equals("internet explorer")) {
-			System.setProperty("webdriver.ie.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe"); 
+			RemoteWebDriver driver;
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setBrowserName(nav);			
+			cap.setPlatform(org.openqa.selenium.Platform.WINDOWS);
+			URL url_hub = new URL("http://192.168.2.26:4444/wd/hub");
+
+			driver = new RemoteWebDriver(url_hub,cap);
+			
+			
+			
+			/*System.setProperty("webdriver.ie.driver","C:\\Users\\Formation\\Desktop\\Documents\\IEDriverServer.exe"); 
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setCapability("nativeEvents", false);
 			cap.setCapability("unexpectedAlertBehaviour", "accept");
@@ -48,7 +58,7 @@ public class TestAdminConnexion {
 			cap.setCapability("enablePersistentHover", true);
 			cap.setCapability("ignoreZoomSetting", true);
 			cap.setCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
-			driver = new InternetExplorerDriver(cap);  			
+			driver = new InternetExplorerDriver(cap); */ 			
 		}
 		if(nav.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver","C:\\Users\\Formation\\Desktop\\Documents\\chromedriver.exe");   
