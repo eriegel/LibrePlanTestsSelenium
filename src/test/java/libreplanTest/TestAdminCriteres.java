@@ -51,7 +51,7 @@ public class TestAdminCriteres {
 			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\geckodriver.exe");   
 			wd = new FirefoxDriver();  			
 		}	
-		wd.get("http://localhost:8085/libreplan");
+		wd.get("http://192.168.2.36:8085/libreplan");
 	}
 	
 	@Test

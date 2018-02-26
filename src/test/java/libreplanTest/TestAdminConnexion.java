@@ -52,7 +52,7 @@ public class TestAdminConnexion {
 			System.setProperty("webdriver.gecko.driver","C:\\Users\\Formation\\Desktop\\Documents\\geckodriver.exe");   
 			driver = new FirefoxDriver();  			
 		}	
-		driver.get("http://localhost:8085/libreplan");
+		driver.get("http://192.168.2.36:8085/libreplan");
 	}
 	
 	@Test

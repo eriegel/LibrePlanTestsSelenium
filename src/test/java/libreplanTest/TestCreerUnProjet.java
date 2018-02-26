@@ -52,7 +52,7 @@ public class TestCreerUnProjet {
 			driver = new FirefoxDriver();  			
 		}		
 		
-		driver.get("http://localhost:8085/libreplan/common/layout/login.zul");
+		driver.get("http://192.168.2.36:8085/libreplan/common/layout/login.zul");
 		
 		//Page connexion : authentification pour entrer dans l'application web
 		PageConnexion pageLogin = PageFactory.initElements(driver, PageConnexion.class);
